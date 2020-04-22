@@ -1,0 +1,23 @@
+@model BankAccount
+<div class="jumbotron">
+    <h2 class="display-3">Hello @ViewBag.UserAccount.Email</h2>
+                @{
+                int sum = 0;
+                foreach (var item in ViewBag.AccountInfo)
+                {
+                    sum += item.Ballance;
+                }
+            }
+    <p class="lead text-success">Your account ballance is: @sum</p>
+    <hr class="my-2">
+    <p class="lead">
+<form asp-action="Trans" method="post" class="form-group">
+    <span asp-validation-for="Ballance"></span>
+    <label asp-for="Ballance"></label>
+    <input asp-for="Ballance" class="form-control col-2" min="-@sum">
+    <br>
+    <input type="submit" class="btn btn-success" value="Submit">
+</form>
+
+    </p>
+</div>

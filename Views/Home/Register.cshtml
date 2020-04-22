@@ -1,0 +1,21 @@
+@model User
+
+    <form asp-action="Register" method="post" class="">
+        <div class="col-8">
+            <span asp-validation-for="Email"></span>
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control">
+        </div>
+            <div class="col-8">
+            <span asp-validation-for="Password"></span>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control">
+        </div>
+            <div class="col-8">
+            <span asp-validation-for="ConfirmPassword"></span>
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="form-control">
+            <br>
+            <input type="submit" value="Register" class="btn btn-outline-secondary">
+    </form>
+</div>
